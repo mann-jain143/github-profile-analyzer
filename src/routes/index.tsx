@@ -213,7 +213,7 @@ function Index() {
                 <button
                   type="submit"
                   disabled={mutation.isPending}
-                  className="brutal press flex w-full items-center justify-center gap-3 bg-coral hover:bg-coral-dark py-4 font-display text-xl tracking-wide text-ink disabled:opacity-50 disabled:pointer-events-none transition-colors duration-150"
+                  className="brutal press flex w-full items-center justify-center gap-3 bg-coral py-4 font-display text-xl tracking-wide text-primary-foreground disabled:cursor-not-allowed disabled:pointer-events-none disabled:opacity-50"
                 >
                   {mutation.isPending ? (
                     <>
@@ -274,7 +274,7 @@ function TopBar() {
       </div>
       <div className="ml-auto flex items-center gap-2">
         <div className="game-pill bg-mint px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-widest">online</div>
-        <div className="brutal-sm grid size-10 place-items-center bg-violet text-white">
+        <div className="brutal-sm grid size-10 place-items-center bg-violet text-paper">
           <Rocket className="size-4" />
         </div>
       </div>
@@ -525,11 +525,11 @@ function Report({ profile, repos, report, onScanAnother }: { profile: GitHubUser
         <ListCard accent="bg-coral" title="Weak points" icon={<AlertTriangle className="size-4" />} items={report.weaknesses} marker="−" markerClass="text-coral-dark" delay={280} />
       </div>
 
-      <section className="brutal animate-pop-in bg-violet p-5 text-white" style={{ animationDelay: "320ms" }}>
+      <section className="brutal animate-pop-in bg-violet p-5 text-paper" style={{ animationDelay: "320ms" }}>
         <SectionTitle icon={<Quote className="size-4" />}>Coach quote</SectionTitle>
         <div className="mt-4 flex gap-3">
           <img src={robotMascot} alt="" width={56} height={56} className="brutal-sm size-14 shrink-0 bg-card p-1" />
-          <p className="text-sm font-semibold italic leading-relaxed text-white">“Great GitHub profiles do not just show code. They show decisions, proof, and momentum.”</p>
+          <p className="text-sm font-semibold italic leading-relaxed text-paper">“Great GitHub profiles do not just show code. They show decisions, proof, and momentum.”</p>
         </div>
       </section>
 
@@ -549,7 +549,7 @@ function Report({ profile, repos, report, onScanAnother }: { profile: GitHubUser
 
       <BoostRating profile={profile} repos={repos} report={report} />
 
-      <button onClick={onScanAnother} className="brutal press flex w-full items-center justify-center gap-2 bg-ink py-4 font-display text-lg tracking-wide text-paper">
+      <button onClick={onScanAnother} className="brutal press flex w-full items-center justify-center gap-2 bg-ink py-4 font-display text-lg tracking-wide text-paper disabled:cursor-not-allowed disabled:pointer-events-none disabled:opacity-50">
         <RotateCcw className="size-4" /> Scan another profile
       </button>
     </div>
@@ -661,14 +661,14 @@ function BoostRating({ profile, repos, report }: { profile: GitHubUser; repos: G
       why: "Pinned repos are your shop window. Lead with depth, not quantity.",
       gain: "+10 score",
       done: pinnedWorthy >= 6,
-      color: "bg-coral text-ink",
+      color: "bg-coral text-primary-foreground",
     },
     {
       title: totalStars >= 25 ? `Nice — ${totalStars} total stars` : "Ship one shareable mini-project",
       why: "A useful tool, demo, or template attracts stars and proves shipping skill.",
       gain: "+12 score",
       done: totalStars >= 25,
-      color: "bg-violet text-white",
+      color: "bg-violet text-paper",
     },
     {
       title: recent >= 3 ? "Activity looks healthy" : "Push commits in the last 90 days",
@@ -682,7 +682,7 @@ function BoostRating({ profile, repos, report }: { profile: GitHubUser; repos: G
       why: "Either go deep on a niche or show range. Avoid one-language clutter.",
       gain: "+6 score",
       done: langSet.size >= 3,
-      color: "bg-blue text-white",
+      color: "bg-blue text-paper",
     },
     {
       title: "Add a polished README to your top repo",

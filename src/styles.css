@@ -83,39 +83,34 @@
   --border: var(--ink);
   --input: var(--ink);
   --ring: var(--coral);
+
+  /* Background pattern helpers */
+  --grid-line: oklch(0.42 0.08 235 / 0.09);
+  --pattern-glow: oklch(1 0 0 / 0.75);
+  --radial-1: oklch(0.86 0.2 132 / 0.28);
+  --radial-2: oklch(0.7 0.22 25 / 0.22);
 }
 
 .dark {
-  --background: oklch(0.15 0 0);
-  --foreground: oklch(0.98 0 0);
-  --paper: oklch(0.12 0.01 275);
-  --ink: oklch(0.95 0.01 275);
-  --panel: oklch(0.17 0.01 275);
-  --panel-2: oklch(0.14 0.01 275);
-  --muted: oklch(0.22 0.01 275);
-  --muted-foreground: oklch(0.7 0.01 275);
-  --border: var(--ink);
+  --paper: oklch(0.17 0.03 275);
+  --ink: oklch(0.96 0.035 195);
+  --panel: oklch(0.22 0.03 275);
+  --panel-2: oklch(0.25 0.03 275);
+  --coral-dark: oklch(0.75 0.22 25);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
   --card: var(--panel);
   --card-foreground: var(--ink);
   --popover: var(--panel);
   --popover-foreground: var(--ink);
-  --primary-foreground: oklch(0.12 0.01 275);
-  
-  --coral: oklch(0.60 0.20 25);
-  --blue: oklch(0.55 0.16 225);
-  --yellow: oklch(0.65 0.14 90);
-  --mint: oklch(0.55 0.14 168);
-  --violet: oklch(0.50 0.18 295);
-  --lime: oklch(0.60 0.16 132);
-}
+  --primary-foreground: var(--paper);
 
-.dark body {
-  background-image:
-    radial-gradient(circle at 12% 15%, oklch(0.86 0.2 132 / 0.12) 0 70px, transparent 72px),
-    radial-gradient(circle at 86% 8%, oklch(0.7 0.22 25 / 0.10) 0 92px, transparent 94px),
-    linear-gradient(135deg, oklch(1 0 0 / 0.02) 0 25%, transparent 25% 50%, oklch(1 0 0 / 0.01) 50% 75%, transparent 75%),
-    linear-gradient(to right, oklch(0.98 0 0 / 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.98 0 0 / 0.04) 1px, transparent 1px);
+  /* Background pattern helpers */
+  --grid-line: oklch(0.96 0.035 195 / 0.06);
+  --pattern-glow: oklch(0.17 0.03 275 / 0.75);
+  --radial-1: oklch(0.86 0.2 132 / 0.15);
+  --radial-2: oklch(0.7 0.22 25 / 0.12);
 }
 
 @layer base {
@@ -128,15 +123,17 @@
     color: var(--color-ink);
     font-family: var(--font-sans);
     background-image:
-      radial-gradient(circle at 12% 15%, oklch(0.86 0.2 132 / 0.28) 0 70px, transparent 72px),
-      radial-gradient(circle at 86% 8%, oklch(0.7 0.22 25 / 0.22) 0 92px, transparent 94px),
-      linear-gradient(135deg, oklch(1 0 0 / 0.75) 0 25%, transparent 25% 50%, oklch(1 0 0 / 0.55) 50% 75%, transparent 75%),
-      linear-gradient(to right, oklch(0.42 0.08 235 / 0.09) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(0.42 0.08 235 / 0.09) 1px, transparent 1px);
+      radial-gradient(circle at 12% 15%, var(--radial-1) 0 70px, transparent 72px),
+      radial-gradient(circle at 86% 8%, var(--radial-2) 0 92px, transparent 94px),
+      linear-gradient(135deg, var(--pattern-glow) 0 25%, transparent 25% 50%, var(--pattern-glow) 50% 75%, transparent 75%),
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
     background-size: auto, auto, 46px 46px, 34px 34px, 34px 34px;
     overflow-x: hidden;
   }
 }
+
+/* ... (Rest of your original utilities and keyframes remain unchanged) */
 
 @utility brutal {
   border: 2px solid var(--ink);
