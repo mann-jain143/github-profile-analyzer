@@ -1,0 +1,7 @@
+# GitHub Profile Analyzer
+
+> Turn any public GitHub username into a playful AI-scored developer scorecard with strengths, weak points, and an upgrade checklist.
+
+## Pages
+
+- [Home](/): Scan a GitHub profile and get an AI dev score, language breakdown, recruiter-style feedback, and concrete upgrade moves.
