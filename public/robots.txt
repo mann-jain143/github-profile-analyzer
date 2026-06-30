@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://git-profile-planner.lovable.app/sitemap.xml
